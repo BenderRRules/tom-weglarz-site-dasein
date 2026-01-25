@@ -7,10 +7,8 @@ import ProjectList from '../components/ProjectList.astro';
 import Social from '../components/Social.astro';
 
 import { getCollection } from 'astro:content';
-import { getSite } from '../utils/consts';
 
-const cv = (await getCollection('cv' as any)) as any[];
-const site = await getSite();
+const cv = await getCollection('cv');
 ---
 
 <PageLayout title="Tom Weglarz">
@@ -27,29 +25,15 @@ const site = await getSite();
 
   <Social class="mt-8" />
 
-  <ProjectList
-    heading="Projects"
-    limit={4}
-    viewAllHref="/projects"
-  />
+  <ProjectList heading="Projects" limit={4} viewAllHref="/projects" />
 
-  <PostList
-    heading="Blog"
-    limit={3}
-    viewAllHref="/blog"
-  />
+  <PostList heading="Blog" limit={3} viewAllHref="/blog" />
 
   {
-    cv.map((section) => {
-      if (section.data.items) {
-        return (
-          <SectionList
-            heading={section.data.heading}
-            items={section.data.items}
-          />
-        );
-      }
-      return null;
-    })
+    cv.map((section) =>
+      section.data?.items ? (
+        <SectionList heading={section.data.heading} items={section.data.items} />
+      ) : null
+    )
   }
 </PageLayout>
