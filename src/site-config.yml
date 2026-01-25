@@ -1,19 +1,19 @@
 author:
   name: Tom Weglarz
   role: Christ First
-  bio:  Searching for my first business acquisition with Acquisiion Ace.
-  location: Dallas-Fort Worth, Texas
+  bio: Searching for my first business acquisition with Acquisition Ace.
+  location: Dallas–Fort Worth, Texas
 
 social:
   - id: "x"
     label: "X"
-    href: "#_"
+    href: "https://x.com/"
   - id: "github"
     label: "GitHub"
     href: "https://github.com/roicort"
   - id: "linkedin"
-    label: "Linkedin"
-    href: "#_"
+    label: "LinkedIn"
+    href: "https://www.linkedin.com/"
   - id: "email"
     label: "Email"
-    href: "mailto:"
+    href: "mailto:tom@tomweglarz.com"
